@@ -8,9 +8,12 @@ import { Product } from './product';
     providedIn: 'root'
 })
 export class ProductService {
+    products: Product[]=[];
     private readonly API_URL = 'http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp';
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { 
+        
+    }
 
     getProducts(count = 10): Observable<Product[]> {
         return this.http.get<Product[]>(this.API_URL).pipe(
@@ -18,7 +21,7 @@ export class ProductService {
         );
     }
     getProductById(id: number): Observable<Product> {
-        return this.http.get<Product>(`${this.API_URL}/${(id+1)}`);
+        return this.http.get<Product>(`${this.API_URL}/${(id)}`);
     }
     createProduct(product: Partial<Product>): Observable<Product> {
         return this.http.post<Product>(this.API_URL, product);

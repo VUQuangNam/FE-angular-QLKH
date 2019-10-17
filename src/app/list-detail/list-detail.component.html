@@ -1,7 +1,8 @@
-<!-- <div class="container">
+<div class="container">
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
@@ -10,44 +11,13 @@
                 <th>Salary</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
-        </tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.id}}</td>
+            <td>{{product.id}}</td>
+        </tr>
     </table>
-</div> -->
-
-<div *ngFor="let product of products">
-        <h4>
-          {{product.id}}
-        </h4>
-        <p>
-          {{product.name}}
-        </p>
-      </div>
-      
-      <ng-template #nothing>
-        <!-- <p>Nothing to show</p> -->
-      </ng-template>
+</div>
