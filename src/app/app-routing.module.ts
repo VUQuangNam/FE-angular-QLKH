@@ -8,8 +8,8 @@ import { EditDetailComponent } from './edit-detail/edit-detail.component';
 
 const routes: Routes = [
     { path: '', component: HomePageComponent },
-    { path: '/list', component: ListDetailComponent },
-    { path: '/edit/:id', component: EditDetailComponent },
+    { path: 'list', component: ListDetailComponent },
+    { path: 'edit/:id', component: EditDetailComponent },
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
