@@ -1,10 +1,53 @@
-<ul>
-    <li *ngFor="let product of productList; index as i" [class.completed]="product.completed">
-        <!-- <div (click)="toggleTodo(i)"> -->
-            Id: {{product.id}}
-            <br>
-            {{product.name}}
-        <!-- </div> -->
-        <!-- <button (click)="deleteTodo(i)">delete</button> -->
-    </li>
-</ul>
+<!-- <div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+
+<div *ngFor="let product of products">
+        <h4>
+          {{product.id}}
+        </h4>
+        <p>
+          {{product.name}}
+        </p>
+      </div>
+      
+      <ng-template #nothing>
+        <!-- <p>Nothing to show</p> -->
+      </ng-template>

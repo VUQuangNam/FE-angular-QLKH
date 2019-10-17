@@ -6,6 +6,7 @@ import { EditDetailComponent } from './edit-detail/edit-detail.component';
 
 
 
+
 const routes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'list', component: ListDetailComponent },
