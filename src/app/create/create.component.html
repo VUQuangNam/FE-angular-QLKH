@@ -1,0 +1,47 @@
+<h2 class="text-center">Creat</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+        <label class="col">
+            Name
+            <input type="text" class="form-control" formControlName="name">
+        </label>
+    </div>
+    <div class="form-group row">
+        <label class="col">
+            Description
+            <input type="text" class="form-control" formControlName="description">
+        </label>
+    </div>
+    <div class="alert " role="alert" *ngIf="registerForm.get('description').invalid">
+
+    </div>
+    <div class="form-group row">
+        <label class="col">
+            Price
+            <input type="text" class="form-control" formControlName="price">
+        </label>
+    </div>
+    <div class="alert" role="alert" *ngIf="registerForm.get('price').invalid">
+
+    </div>
+    <div class="form-group row">
+        <label class="col">
+            Currency
+            <select formControlName="currency" class="form-control">
+                <option value="">Chọn</option>
+                <option value="vnd">VND</option>
+                <option value="usd">USD</option>
+            </select>
+        </label>
+    </div>
+    <div class="alert alert-danger" role="alert"
+        *ngIf="registerForm.get('currency').invalid && registerForm.get('currency').touched">
+        Currency is required!
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info" type="submit">Submit</button>
+    </div>
+</form>
+<pre>
+{{ registerForm.value | json}}
+</pre>

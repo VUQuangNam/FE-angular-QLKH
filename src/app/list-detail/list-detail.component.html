@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-f">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -9,15 +9,20 @@
                 <th>Age</th>
                 <th>Start date</th>
                 <th>Salary</th>
+                <th>Setting</th>
             </tr>
         </thead>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products | paginate: config">
             <td>{{product.id}}</td>
             <td>{{product.name}}</td>
-            <td>{{product.id}}</td>
-            <td>{{product.id}}</td>
-            <td>{{product.id}}</td>
-            <td>{{product.id}}</td>
+            <td>{{product.position}}</td>
+            <td>{{product.office}}</td>
+            <td>{{product.age}}</td>
+            <td>{{product.startdate}}</td>
+            <td>{{product.salary}}</td>
+            <td><button>Edit</button></td>
         </tr>
     </table>
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
 </div>

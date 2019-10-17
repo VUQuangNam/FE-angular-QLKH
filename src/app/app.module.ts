@@ -7,21 +7,24 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ListDetailComponent } from './list-detail/list-detail.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HomePageComponent,
         ListDetailComponent,
-        EditDetailComponent
+        EditDetailComponent,
+        CreateComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxPaginationModule
     ],
     providers: [],
     bootstrap: [AppComponent]

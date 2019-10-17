@@ -13,26 +13,28 @@ import { HttpClient } from '@angular/common/http';
 export class ListDetailComponent implements OnInit {
     productList: Product;
     products: Product[] = [];
-
+    config: any;
     constructor(private productService: ProductService,
         private route: ActivatedRoute,
         http: HttpClient) {
         http.get<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp').subscribe(res => {
             this.products = res;
         });
+        this.config = {
+            itemsPerPage: 10,
+            currentPage: 1,
+        };
     }
-
+    pageChanged(event) {
+        this.config.currentPage = event;
+    }
     ngOnInit() {
-        // const id = +this.route.snapshot.paramMap.get('id');
-        // this.productService.getProductById(id).subscribe(
-        //     next => (this.productList = next),
-        //     error => {
-        //         console.log(error);
-        //         this.productList = null;
-        //     }
-        // );
 
     }
-
-
 }
+
+
+
+
+
+
