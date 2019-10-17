@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ListDetailComponent } from './list-detail/list-detail.component';
+import { EditDetailComponent } from './edit-detail/edit-detail.component';
 
 
 
 const routes: Routes = [
-    { path: '', component: HomePageComponent },];
+    { path: '', component: HomePageComponent },
+    { path: '/list', component: ListDetailComponent },
+    { path: '/edit/:id', component: EditDetailComponent },
+];
 @NgModule({
-    imports: [CommonModule, RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
-    declarations: []
 })
 export class AppRoutingModule { }
