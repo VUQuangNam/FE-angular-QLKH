@@ -1,3 +1,10 @@
-<p>
-  list-detail works!
-</p>
+<ul>
+    <li *ngFor="let product of productList; index as i" [class.completed]="product.completed">
+        <!-- <div (click)="toggleTodo(i)"> -->
+            Id: {{product.id}}
+            <br>
+            {{product.name}}
+        <!-- </div> -->
+        <!-- <button (click)="deleteTodo(i)">delete</button> -->
+    </li>
+</ul>

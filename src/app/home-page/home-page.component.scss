@@ -18,8 +18,17 @@
 #QL div{
     padding: 10px 0px 10px 0px;
 }
-#seach{
+#search{
+    width: 100%;
     margin: 10px;
-    height: 80px;
+
     background: white;
+}
+#inputsearch{
+    padding: 10px 0px 0px 10px;
+    border-right: solid 1px black;
+}
+#username{
+    text-align: center;
+    padding: 20px;
 }
