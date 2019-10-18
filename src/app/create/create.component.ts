@@ -40,7 +40,7 @@ export class CreateComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log('succsess');
-                    this.router.navigate(['http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/']);
+                    // this.router.navigate(['/create']);
                 },
             );
     }

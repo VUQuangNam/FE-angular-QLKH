@@ -32,7 +32,7 @@ export class ProductService {
         return this.http.delete(`${this.API_URL}/${id}`);
     }
     updateProduct(product: Product): Observable<Product> {
-        return this.http.patch<Product>(`${this.API_URL}/${product.id}`, product);
+        return this.http.put<Product>(`${this.API_URL}/${product.id}`, product);
     }
 
 }

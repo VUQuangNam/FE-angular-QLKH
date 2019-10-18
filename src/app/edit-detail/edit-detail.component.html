@@ -1,3 +1,50 @@
-<p>
-  edit-detail works!
-</p>
+ 
+<form class="container" [formGroup]="postForm" (ngSubmit)="onSubmit()">
+        <div class="form-group  row">
+                <label class="col">
+                    Name
+                    <input type="text" class="form-control" formControlName="name">
+                </label>
+            </div>
+            <div class="form-group row">
+                <label class="col">
+                    Position
+                    <input type="text" class="form-control" formControlName="position">
+                </label>
+            </div>
+        
+            <!-- Validate
+            <div class="alert " role="alert" *ngIf="registerForm.get('description').invalid">
+            </div> -->
+            <div class="form-group row">
+                <label class="col">
+                    Office
+                    <input type="text" class="form-control" formControlName="office">
+                </label>
+            </div>
+            <!-- <div class="alert" role="alert" *ngIf="registerForm.get('price').invalid">
+        home
+            </div> -->
+            <div class="form-group row">
+                <label class="col">
+                    Age
+                    <input type="text" class="form-control" formControlName="age">
+                </label>
+            </div>
+            <!-- <div class="alert" role="alert" *ngIf="registerForm.get('price').invalid">
+        
+            </div> -->
+            <div class="form-group row">
+                <label class="col">
+                    Startdate
+                    <input type="text" class="form-control" formControlName="startdate">
+                </label>
+            </div>
+            <div class="form-group row">
+                <label class="col">
+                    Salary
+                    <input type="text" class="form-control" formControlName="salary">
+                </label>
+            </div>
+        <button type="submit">Submit</button>
+      </form>

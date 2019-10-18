@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
     styleUrls: ['./list-detail.component.scss']
 })
 export class ListDetailComponent implements OnInit {
-    productList: Product;
+    // productList: Product;
     products: Product[] = [];
     config: any;
     constructor(private productService: ProductService,
@@ -28,13 +28,17 @@ export class ListDetailComponent implements OnInit {
     pageChanged(event) {
         this.config.currentPage = event;
     }
-    ngOnInit() {
+    ngOnInit() {this.productService
+        .getProducts()
+        .subscribe(next => (this.products = next), error => (this.products = []));
 
     }
+
+    
+    deletePost(i) {
+        const product = this.products[i];
+        this.productService.deleteProduct(product.id).subscribe(() => {
+          this.products = this.products.filter(t => t.id !== product.id);
+        });
+      }
 }
-
-
-
-
-
-
