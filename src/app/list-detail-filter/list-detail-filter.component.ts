@@ -5,22 +5,31 @@ import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-
 @Component({
-    selector: 'app-home-page',
-    templateUrl: './home-page.component.html',
-    styleUrls: ['./home-page.component.scss']
+    selector: 'app-list-detail-filter',
+    templateUrl: './list-detail-filter.component.html',
+    styleUrls: ['./list-detail-filter.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class ListDetailFilterComponent implements OnInit {
+    // products: Product[] = [];
     filteredProduct: Product[] = [];
-    products: Product[] = [];
     notification;
+    config: any;
 
 
     constructor(private router: Router,
         private productService: ProductService,
         private route: ActivatedRoute,
-        http: HttpClient) { }
+        http: HttpClient) { 
+            this.config = {
+                itemsPerPage: 10,
+                currentPage: 1,
+            };
+        }
+        pageChanged(event) {
+            this.config.currentPage = event;
+        }
+
 
     ngOnInit() {
         this.productService.getListProductsByUser().subscribe(
@@ -31,9 +40,9 @@ export class HomePageComponent implements OnInit {
         );
     }
     search(key) {
-        this.notification = true;
+        this.notification = !this.notification;
         this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-        console.log(this.filteredProduct);
+        console.log(this.filteredProduct.length);
         console.log(this.notification);
     }
 }

@@ -12,7 +12,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListDetailComponent implements OnInit {
     products: Product[] = [];
-    // filteredProduct: Product[] = [];
+    notification;
+    filteredProduct: Product[] = [];
     config: any;
     constructor(private productService: ProductService,
         private route: ActivatedRoute,
@@ -20,9 +21,7 @@ export class ListDetailComponent implements OnInit {
         http.get<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp').subscribe(res => {
             this.products = res;
         });
-        // http.delete<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp/id').subscribe(res => {
-        //     this.products = res;
-        // });
+
         this.config = {
             itemsPerPage: 10,
             currentPage: 1,
@@ -35,17 +34,25 @@ export class ListDetailComponent implements OnInit {
         this.productService
             .getProducts()
             .subscribe(next => (this.products = next), error => (this.products = []));
-
+        this.productService.getListProductsByUser().subscribe(
+            next => {
+                this.filteredProduct = next;
+                this.filteredProduct = this.filteredProduct;
+            }
+        );
 
     }
-
+    search(key) {
+        this.notification = !this.notification;
+        this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
+        console.log(this.filteredProduct.length);
+        console.log(this.notification);
+    }
     deletePost(i) {
         const product = this.products[i];
         this.productService.deleteProduct(product.id).subscribe(() => {
             this.products = this.products.filter(t => t.id !== product.id);
         });
     }
-    // search(key) {
-    //     this.filteredProduct = this.products.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-    // }
+
 }                                                                                                                                                                                                   

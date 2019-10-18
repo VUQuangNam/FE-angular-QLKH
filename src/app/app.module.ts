@@ -9,6 +9,7 @@ import { ListDetailComponent } from './list-detail/list-detail.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CreateComponent } from './create/create.component';
+import { ListDetailFilterComponent } from './list-detail-filter/list-detail-filter.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { CreateComponent } from './create/create.component';
         HomePageComponent,
         ListDetailComponent,
         EditDetailComponent,
-        CreateComponent
+        CreateComponent,
+        ListDetailFilterComponent
     ],
     imports: [
         BrowserModule,
