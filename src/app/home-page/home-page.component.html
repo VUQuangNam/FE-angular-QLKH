@@ -16,23 +16,27 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="input-group" id="inputsearch">
-                            <input type="text" class="form-control" placeholder="Search" style="width: 300px;">
-                            <div class="input-group-append">
-                                <button class="input-group-text" style="height: 34px;">Search</button>
-                            </div>
-                        </div>
+                            <input type="text" class="form-control" placeholder="Search" style="width: 300px;"
+                                (input)="search($event.target.value)">
+                                <label for="s"></label>
+                            <!-- <div class="input-group-append">
+                                    <!-- <input class="input-group-text" type="text"  id="s" placeholder="Tìm tất cả Note"
+                                    (input)="search($event.target.value)"> -->
+                            <!-- <button class="input-group-text" style="height: 34px;" >Search</button> -->
+                        <!-- </div> -->
                     </div>
-                    <div class="col-4">
-                        <div id="username">
-                            <button [routerLink]="['/create']">Create</button>
-                        </div>
+                </div>
+                <div class="col-4">
+                    <div id="username">
+                        <button [routerLink]="['/create']">Create</button>
                     </div>
                 </div>
             </div>
-            <hr>
-            <div>
-                <app-list-detail></app-list-detail>
-            </div>
+        </div>
+        <hr>
+        <div>
+            <app-list-detail></app-list-detail>
         </div>
     </div>
+</div>
 </div>

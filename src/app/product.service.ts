@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, max } from 'rxjs/operators';
 import { Product } from './product';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class ProductService {
 
     }
 
-    getProducts(count = 10): Observable<Product[]> {
+    getProducts(count = 10000): Observable<Product[]> {
         return this.http.get<Product[]>(this.API_URL).pipe(
             map(response => response.filter((product, i) => i < count))
         );
@@ -35,4 +35,7 @@ export class ProductService {
         return this.http.put<Product>(`${this.API_URL}/${product.id}`, product);
     }
 
+    getListProductByUser(): Observable<any> {
+        return this.http.get<any>(this.API_URL);
+      }
 }
