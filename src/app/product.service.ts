@@ -35,7 +35,7 @@ export class ProductService {
         return this.http.put<Product>(`${this.API_URL}/${product.id}`, product);
     }
 
-    getListProductByUser(): Observable<any> {
-        return this.http.get<any>(this.API_URL);
-      }
+    // getListProductByUser(): Observable<any> {
+    //     return this.http.get<any>(this.API_URL);
+    //   }
 }

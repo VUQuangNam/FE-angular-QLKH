@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ListDetailComponent implements OnInit {
     products: Product[] = [];
-    filteredProduct: Product[] = [];
+    // filteredProduct: Product[] = [];
     config: any;
     constructor(private productService: ProductService,
         private route: ActivatedRoute,
@@ -45,7 +45,7 @@ export class ListDetailComponent implements OnInit {
             this.products = this.products.filter(t => t.id !== product.id);
         });
     }
-    search(key) {
-        this.filteredProduct = this.products.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-    }
+    // search(key) {
+    //     this.filteredProduct = this.products.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
+    // }
 }                                                                                                                                                                                                   

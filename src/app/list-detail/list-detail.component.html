@@ -2,7 +2,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tr *ngFor="let product of products | paginate: config">
-            <td>{{product.id}}</td>
+            <!-- <td>{{product.id}}</td> -->
             <td>{{product.name}}</td>
             <td>{{product.position}}</td>
             <td>{{product.office}}</td>
@@ -21,7 +21,8 @@
             <td>{{product.startdate}}</td>
             <td>{{product.salary}}</td>
             <td><a [routerLink]="['/edit', product.id]"><button class="btn btn-outline-warning">Edit</button></a>
-                <button (click)="deletePost(product.id)">Delete</button></td>
+                <button class="btn btn-outline-warning" style="color: blue;" (click)="deletePost(product.id)">Delete</button>
+            </td>
         </tr>
     </table>
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
