@@ -48,7 +48,38 @@
                 </div>
             </div>
             <hr>
-            <app-list-detail></app-list-detail>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <!-- <th>ID</th> -->
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                        <th>Setting</th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let product of filteredProduct | paginate: config">
+                    <td>{{product.name}}</td>
+                    <td>{{product.position}}</td>
+                    <td>{{product.office}}</td>
+                    <td>{{product.age}}</td>
+                    <td>{{product.startdate}}</td>
+                    <td>{{product.salary}}</td>
+                    <td><a [routerLink]="['/edit', product.id]"><button
+                                class="btn btn-outline-warning">Edit</button></a>
+
+                        <button class="btn btn-outline-warning" style="color: blue;"
+                            (click)="deletePost(product.id)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+            <!-- <app-list-detail></app-list-detail> -->
+
         </div>
     </div>
 </div>

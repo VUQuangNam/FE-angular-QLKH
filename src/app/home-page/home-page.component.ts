@@ -15,12 +15,23 @@ export class HomePageComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
     notification;
+    config: any;
 
 
-    constructor(private router: Router,
+    constructor(
+        private router: Router,
         private productService: ProductService,
         private route: ActivatedRoute,
-        http: HttpClient) { }
+        http: HttpClient) {
+        http.get<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp').subscribe(res => {
+            this.products = res;
+        });
+        this.config = {
+
+            itemsPerPage: 10,
+            currentPage: 1,
+        };
+    }
 
     ngOnInit() {
         this.productService.getListProductsByUser().subscribe(
@@ -29,11 +40,31 @@ export class HomePageComponent implements OnInit {
                 this.filteredProduct = this.filteredProduct;
             }
         );
+        this.productService
+            .getProducts()
+            .subscribe(next => (this.products = next), error => (this.products = []));
+
+    }
+    pageChanged(event) {
+        this.config.currentPage = event;
     }
     search(key) {
         this.notification = true;
         this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-        console.log(this.filteredProduct);
-        console.log(this.notification);
+        console.log("list " + this.filteredProduct.length);
     }
+
+    //     findProductById(id: number) : Product{
+    //         for(let i =0;i<this.products.l)
+    //         this.products.findIndex
+    // return 
+    //     }
+    deletePost(i) {
+        const product = this.products[i];
+        this.productService.deleteProduct(product.id).subscribe(() => {
+            this.products = this.products.filter(t => t.id !== product.id);
+            alert("xoa thanh cong");
+        });
+    }
+
 }

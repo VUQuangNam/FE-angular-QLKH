@@ -20,15 +20,15 @@ export class ListDetailFilterComponent implements OnInit {
     constructor(private router: Router,
         private productService: ProductService,
         private route: ActivatedRoute,
-        http: HttpClient) { 
-            this.config = {
-                itemsPerPage: 10,
-                currentPage: 1,
-            };
-        }
-        pageChanged(event) {
-            this.config.currentPage = event;
-        }
+        http: HttpClient) {
+        this.config = {
+            itemsPerPage: 10,
+            currentPage: 1,
+        };
+    }
+    pageChanged(event) {
+        this.config.currentPage = event;
+    }
 
 
     ngOnInit() {
@@ -42,7 +42,8 @@ export class ListDetailFilterComponent implements OnInit {
     search(key) {
         this.notification = !this.notification;
         this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-        console.log(this.filteredProduct.length);
+        console.log('list find' + this.filteredProduct);
+
         console.log(this.notification);
     }
 }

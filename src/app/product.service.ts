@@ -34,7 +34,7 @@ export class ProductService {
     }
     updateProduct(product: Product): Observable<Product> {
         return this.http.put<Product>(`${this.API_URL}/${product.id}`, product);
-    }
+    } 
 
     getListProductsByUser(): Observable<any> {
         return this.http.get<any>(this.API_URL);

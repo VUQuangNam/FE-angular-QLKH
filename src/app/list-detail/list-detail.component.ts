@@ -42,12 +42,6 @@ export class ListDetailComponent implements OnInit {
         );
 
     }
-    search(key) {
-        this.notification = !this.notification;
-        this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
-        console.log(this.filteredProduct.length);
-        console.log(this.notification);
-    }
     deletePost(i) {
         const product = this.products[i];
         this.productService.deleteProduct(product.id).subscribe(() => {

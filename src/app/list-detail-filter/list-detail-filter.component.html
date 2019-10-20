@@ -25,5 +25,8 @@
             </td>
         </tr>
     </table>
+    <tr *ngFor="let a of filteredProduct">
+        <td>{{a.name}}</td>
+    </tr>
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 </div>
