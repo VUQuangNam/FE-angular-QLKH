@@ -42,7 +42,6 @@ export class CreateComponent implements OnInit {
                     console.log('succsess');
                     alert("Đăng ký thành công!!");
                     window.location.reload();
-                    // this.router.navigate(['/create']);
                 },
             );
     }
