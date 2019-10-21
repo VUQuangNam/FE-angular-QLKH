@@ -1,10 +1,11 @@
 <div class="container-f">
     <div class="row" id="menu">
-        <div class="col-sm-2" style="background-color:rgb(120, 120, 226); height:730px;">
-            <div id="crmadmin"><i class="fab fa-angellist"></i> CRM ADMIN</div>
+        <div class="col-sm-2" style="background-color:#2B3E51; height:730px;">
+            <div id="crmadmin"><i class="fab fa-angellist"></i>CRM ADMIN</div>
             <hr style="background-color: white;">
             <div id="dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard</div>
             <hr style="background-color: white;">
+
             <div id="QL">
                 <div>INTERFACE</div>
                 <div><a href="/" style="color: white;"> <i class="fa fa-cog"></i> QL.Sản phẩm</a></div>
@@ -24,9 +25,13 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div id="username">
-                            <button class="btn btn-warning" style="width: 100px; border: solid 2px red; color:black;"
-                                [routerLink]="['/create']">Create</button>
+                        <div id="username"> <a [routerLink]="['/create']" routerLinkActive="router-link-active">
+                                <!-- <button class="input-group-text" style="height: 34px;"><i style="width: 20px;"
+                                class="fa fa-plus"></i></button> -->
+                                <button class="btn btn-outline-warning"
+                                    style="width: 300px; color:black;font-size: 20px;"> <i>Thêm mới khách hàng
+                                    </i></button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-4">
@@ -48,38 +53,36 @@
                 </div>
             </div>
             <hr>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <!-- <th>ID</th> -->
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
-                        <th>Setting</th>
+            <div>
+                <table id="customers">
+                    <thead>
+                        <tr>
+                            <!-- <th>ID</th> -->
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                            <th>Setting</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let product of filteredProduct | paginate: config">
+                        <td>{{product.name}}</td>
+                        <td>{{product.position}}</td>
+                        <td>{{product.office}}</td>
+                        <td>{{product.age}}</td>
+                        <td>{{product.startdate | date: 'longDate'}}</td>
+                        <td>{{product.salary}}</td>
+                        <td><a [routerLink]="['/edit', product.id]"><button
+                                    class="btn btn-outline-warning">Edit</button></a>
+                            <button class="btn btn-outline-warning" style="color: blue;"
+                                (click)="deletePost(product.id)">Delete</button>
+                        </td>
                     </tr>
-                </thead>
-                <tr *ngFor="let product of filteredProduct | paginate: config">
-                    <td>{{product.name}}</td>
-                    <td>{{product.position}}</td>
-                    <td>{{product.office}}</td>
-                    <td>{{product.age}}</td>
-                    <td>{{product.startdate | date: 'longDate'}}</td>
-                    <td>{{product.salary}}</td>
-                    <td><a [routerLink]="['/edit', product.id]"><button
-                                class="btn btn-outline-warning">Edit</button></a>
-                        <button class="btn btn-outline-warning" style="color: blue;"
-                            (click)="deletePost(product.id)">Delete</button>
-
-                    </td>
-
-                </tr>
-            </table>
-            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-
-            <!-- <app-list-detail></app-list-detail> -->
+                </table>
+                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+            </div>
 
         </div>
     </div>

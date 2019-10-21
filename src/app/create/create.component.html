@@ -1,4 +1,56 @@
-<div class="container" style="background: rgb(247, 246, 245); width: 60%;
+
+
+<div class="container-f">
+        <div class="row" id="menu">
+            <div class="col-sm-2" style="background-color:#2B3E51; height:730px;">
+                <div id="crmadmin"><i class="fab fa-angellist"></i> CRM ADMIN</div>
+                <hr style="background-color: white;">
+                <div id="dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard</div>
+                <hr style="background-color: white;">
+                <div id="QL">
+                    <div>INTERFACE</div>
+                    <div><a href="/" style="color: white;"> <i class="fa fa-cog"></i> QL.Sản phẩm</a></div>
+                    <div><a href="/" style="color: white;"> <i class="fa fa-wrench"></i> QL.Khách hàng</a></div>
+                </div>
+            </div>
+            <div class="col-sm-10" style="background-color:whitesmoke;">
+                <div id="search">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="input-group" id="inputsearch">
+                                <input type="text" class="form-control" placeholder="Search" style="width: 300px;"
+                                    (input)="search($event.target.value)">
+                                <button class="input-group-text" style="height: 34px;"><i style="width: 20px;"
+                                        class="fa fa-search"></i></button>
+                                <label for="s"></label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div id="username"> <a [routerLink]="['/create']" routerLinkActive="router-link-active">
+                                    <button class="btn btn-warning"
+                                        style="width: 100px; border: solid 2px red; color:black;">Create</button></a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div style="padding-top: 10px;float: left;">
+                                <img src="https://previews.123rf.com/images/triken/triken1608/triken160800029/61320775-male-avatar-profile-picture-default-user-avatar-guest-avatar-simply-human-head-vector-illustration-i.jpg"
+                                    style="height: 50px; width:50px;" alt="">
+                            </div>
+                            <div class="dropdown" style="float: left;padding-top: 17px">
+                                <button class="btn btn-primary dropdown-toggle" type="button"
+                                    data-toggle="dropdown">UserName
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Log out</a></li>
+                                    <li><a href="#">Setting</a></li>
+                                    <li><a href="">Thông tin người dùng</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="container" style="background: rgb(247, 246, 245); width: 60%;
              height: 600px;border: solid 1px blue;
              border-radius: 5px;">
     <h2 class="text-center " style="color: rgba(0, 89, 255, 0.918);"><b>Thêm mới thông tin người dùng</b> </h2>
@@ -56,7 +108,7 @@
                 <div class="form-group">
                     <button class="btn btn-success" type="submit"
                         style="width: 80px;border:solid 1px blue;">Submit</button> &nbsp;
-                    <a [routerLink]="['']"> <button class="btn btn-default" type="submit"
+                    <a [routerLink]="['/']"> <button class="btn btn-default" type="submit"
                             style="width: 80px;border:solid 1px blue;">Back</button></a>
                 </div>
             </form>
@@ -68,3 +120,8 @@
 <pre>
 {{ registerForm.value | json}}
 </pre>
+
+    
+            </div>
+        </div>
+    </div>

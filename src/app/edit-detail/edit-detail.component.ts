@@ -8,10 +8,9 @@ import { ProductService } from '../product.service';
     selector: 'app-edit-detail',
     templateUrl: './edit-detail.component.html',
     styleUrls: ['./edit-detail.component.scss'],
-    
+
 })
 export class EditDetailComponent implements OnInit {
-
     product: Product;
     postForm: FormGroup;
     constructor(
@@ -44,18 +43,18 @@ export class EditDetailComponent implements OnInit {
     }
     onSubmit() {
         if (this.postForm.valid) {
-          const { value } = this.postForm;
-          const data = {
-            ...this.product,
-            ...value
-          };
-          this.productService.updateProduct(data).subscribe(
-            next => {
-                console.log('update');
-              this.router.navigate(['']);
-            },
-            error => console.log(error)
-          );
+            const { value } = this.postForm;
+            const data = {
+                ...this.product,
+                ...value
+            };
+            this.productService.updateProduct(data).subscribe(
+                next => {
+                    console.log('update');
+                    this.router.navigate(['']);
+                },
+                error => console.log(error)
+            );
         }
-      }
+    }
 }
