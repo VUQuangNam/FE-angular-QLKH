@@ -70,10 +70,11 @@
                     <td>{{product.salary}}</td>
                     <td><a [routerLink]="['/edit', product.id]"><button
                                 class="btn btn-outline-warning">Edit</button></a>
-
                         <button class="btn btn-outline-warning" style="color: blue;"
                             (click)="deletePost(product.id)">Delete</button>
+
                     </td>
+
                 </tr>
             </table>
             <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
