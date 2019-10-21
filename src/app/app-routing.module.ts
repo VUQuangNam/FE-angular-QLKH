@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListDetailComponent } from './list-detail/list-detail.component';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { CreateComponent } from './create/create.component';
+import { MomentModule } from 'ngx-moment';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
+
     exports: [RouterModule],
 })
 export class AppRoutingModule { }

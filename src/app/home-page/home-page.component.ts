@@ -9,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
-    styleUrls: ['./home-page.component.scss']
+    styleUrls: ['./home-page.component.scss'],
+
 })
 export class HomePageComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
     notification;
     config: any;
-
 
     constructor(
         private router: Router,
@@ -33,19 +33,10 @@ export class HomePageComponent implements OnInit {
     }
 
     ngOnInit() {
-        // const id = +this.route.snapshot.paramMap.get('id');
-        // this.productService.getProductById(id).subscribe(() => {
-        //     console.log('success');
-
-        // },
-        //     error => {
-        //         console.log(error);
-        //     });
-
         this.productService.getListProductsByUser().subscribe(
             next => {
                 this.filteredProduct = next;
-                this.filteredProduct = this.filteredProduct;
+                // this.filteredProduct = this.filteredProduct;
             }
         );
         this.productService

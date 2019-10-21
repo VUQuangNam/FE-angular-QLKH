@@ -7,7 +7,8 @@ import { ProductService } from '../product.service';
 @Component({
     selector: 'app-edit-detail',
     templateUrl: './edit-detail.component.html',
-    styleUrls: ['./edit-detail.component.scss']
+    styleUrls: ['./edit-detail.component.scss'],
+    
 })
 export class EditDetailComponent implements OnInit {
 
@@ -51,7 +52,6 @@ export class EditDetailComponent implements OnInit {
           this.productService.updateProduct(data).subscribe(
             next => {
                 console.log('update');
-
               this.router.navigate(['']);
             },
             error => console.log(error)

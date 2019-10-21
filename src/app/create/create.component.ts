@@ -40,6 +40,8 @@ export class CreateComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log('succsess');
+                    alert("Đăng ký thành công!!");
+                    window.location.reload();
                     // this.router.navigate(['/create']);
                 },
             );

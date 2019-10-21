@@ -18,7 +18,7 @@ import { ListDetailFilterComponent } from './list-detail-filter/list-detail-filt
         ListDetailComponent,
         EditDetailComponent,
         CreateComponent,
-        ListDetailFilterComponent
+        ListDetailFilterComponent,
     ],
     imports: [
         BrowserModule,
@@ -26,7 +26,8 @@ import { ListDetailFilterComponent } from './list-detail-filter/list-detail-filt
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, max } from 'rxjs/operators';
 import { Product } from './product';
-import { constructDependencies } from '@angular/core/src/di/reflective_provider';
 
 @Injectable({
     providedIn: 'root'
@@ -31,14 +30,11 @@ export class ProductService {
         return this.http.post<Product>(this.API_URL, product);
     }
 
-    // deleteProduct(id:number): Observable<Product>{
-    //     console.log(`${this.API_URL}/${(id)}`);
-    //     return this.http.delete<Product>(`${this.API_URL}/${(id)}`);
-    // }
+
 
     deleteProduct(id: number): Observable<any> {
         return this.http.delete(`${this.API_URL}/${id}`);
-       
+
     }
 
     updateProduct(product: Product): Observable<Product> {
