@@ -10,8 +10,8 @@
 
             <div id="QL">
                 <div class="sidebar-heading"><b>INTERFACE</b></div>
-                <div><a href="/" style="color: white;"> <i class="fa fa-cog"></i> QL.Sản phẩm</a></div>
-                <div><a href="/" style="color: white;"> <i class="fa fa-wrench"></i> QL.Khách hàng</a></div>
+                <div><a href="/" style="color: white;"><i class="fas fa-fw fa-cog"></i> QL.Sản phẩm</a></div>
+                <div><a href="/" style="color: white;"> <i class="fas fa-fw fa-wrench"></i> QL.Khách hàng</a></div>
             </div>
         </div>
         <div class="col-sm-10" style="background-color:rgb(243, 244, 247);">
@@ -54,7 +54,7 @@
             <div class="row" style="clear: left;">
                 <div class="col-3">
                     <button class="btn btn-default mr-2"
-                        style="border-left: solid 5px #3173FB; height: 100px; width: 300px;">
+                        style="border-left: solid 5px #3173FB; height: 100px; width: 300px;border-radius: 10px;">
                         <div style="float: left">
                             <div style="color: #3173FB;margin-bottom: 4px"> EARNINGS (MONTHLY)</div>
                             <div style="font-size: 20px; text-align: left;">$40.000</div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-3">
                     <button class="btn btn-default mr-2"
-                        style="border-left: solid 5px #45c98a; height: 100px; width: 300px;">
+                        style="border-left: solid 5px #45c98a; height: 100px; width: 300px;border-radius: 10px;">
                         <div style="float: left;">
                             <div style="color: #45c98a; text-align: left;margin-bottom: 4px"> EARNINGS (ANNUAL)</div>
                             <div style="font-size: 20px; text-align: left;">$215.000</div>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-3">
                     <button class="btn btn-default mr-2"
-                        style="border-left: solid 5px rgb(54, 185, 204); height: 100px; width: 300px;">
+                        style="border-left: solid 5px rgb(54, 185, 204); height: 100px; width: 300px;border-radius: 10px;">
                         <div style="float: left;">
                             <div style="color: rgb(54, 185, 204); text-align: left;margin-bottom: 4px"> TASK</div>
                             <div style="height: 10px;"></div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-3">
                     <button class="btn btn-default mr-2"
-                        style="border-left: solid 5px #f6c23e; height: 100px; width: 270px;">
+                        style="border-left: solid 5px #f6c23e; height: 100px; width: 290px;border-radius: 10px;">
                         <div style="float: left">
                             <div style="color: #f6c23e"> PENDING REQUESTS</div>
                             <div style="font-size: 20px; text-align: left;">18</div>
@@ -111,20 +111,25 @@
                 </div>
             </div>
             <hr>
-            <div>
-                <table style="background-color: white;">
-                    <thead>
-                        <tr>
-                            <!-- <th>ID</th> -->
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                            <th>Setting</th>
-                        </tr>
-                    </thead>
+            <!-- List  -->
+            <div style=" height: 480px;width: 1260px;overflow-x:scroll">
+                <table style="background-color: white;height: 480px;width: 2000px ">
+                    <tr>
+                        <!-- <th>ID</th> -->
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Card</th>
+                        <th>Phone</th>
+                        <th>Country</th>
+                        <th>Random</th>
+                        <th>Setting</th>
+                    </tr>
                     <tr *ngFor="let product of filteredProduct | paginate: config">
                         <td>{{product.name}}</td>
                         <td>{{product.position}}</td>
@@ -132,6 +137,13 @@
                         <td>{{product.age}}</td>
                         <td>{{product.startdate | date: 'longDate'}}</td>
                         <td>{{product.salary}}</td>
+                        <td>{{product.city}}</td>
+                        <td>{{product.email}}</td>
+                        <td>{{product.card}}</td>
+                        <td>{{product.phone}}</td>
+                        <td>{{product.country}}</td>
+                        <td>{{product.random}}</td>
+
                         <td><a [routerLink]="['/edit', product.id]"><button
                                     class="btn btn-outline-warning">Edit</button></a>
                             <button class="btn btn-outline-warning" style="color: blue;"
@@ -140,8 +152,11 @@
                     </tr>
                 </table>
                 <div style="height: 5px;"></div>
-                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+
             </div>
+            <!-- Pagination -->
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
         </div>
     </div>
 </div>
