@@ -1,6 +1,6 @@
 <div class="container-f">
     <div class="row" id="menu">
-        <div class="col-sm-2" style="background-color:#2B3E51; height:730px;">
+        <div class="col-sm-2" style="background-color:#2B3E51; height:780px;">
             <div id="crmadmin"><i class="fab fa-angellist"></i>CRM ADMIN</div>
             <hr style="background-color: white;">
             <div id="dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard</div>
@@ -13,10 +13,11 @@
             </div>
         </div>
         <div class="col-sm-10" style="background-color:whitesmoke;">
+            <!-- SEARCH -->
             <div id="search">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="input-group" id="inputsearch">
+                    <div class="col-6">
+                        <div class="input-group" style="margin-top: 10px;">
                             <input type="text" class="form-control" placeholder="Search" style="width: 300px;"
                                 (input)="search($event.target.value)">
                             <button class="input-group-text" style="height: 34px;"><i style="width: 20px;"
@@ -24,35 +25,88 @@
                             <label for="s"></label>
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div id="username"> <a [routerLink]="['/create']" routerLinkActive="router-link-active">
+                    <div class="col-6">
+                        <div id="username"> <a [routerLink]="['/create']">
                                 <!-- <button class="input-group-text" style="height: 34px;"><i style="width: 20px;"
-                                class="fa fa-plus"></i></button> -->
-                                <button class="btn btn-outline-warning"
-                                    style="width: 300px; color:black;font-size: 20px;"> <i>Thêm mới khách hàng
-                                    </i></button>
+                                        class="fa fa-plus"></i></button> -->
+                                <button class="btn btn-outline-warning"><i style="width: 40px; height: 40px;"
+                                        class="fa fa-plus-square"></i></button>
+                                <label for="s"></label>
                             </a>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div style="padding-top: 10px;float: left;">
-                            <img src="https://previews.123rf.com/images/triken/triken1608/triken160800029/61320775-male-avatar-profile-picture-default-user-avatar-guest-avatar-simply-human-head-vector-illustration-i.jpg"
-                                style="height: 50px; width:50px;" alt="">
-                        </div>
-                        <div class="dropdown" style="float: left;padding-top: 17px">
-                            <button class="btn btn-primary dropdown-toggle" type="button"
-                                data-toggle="dropdown">UserName
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Log out</a></li>
-                                <li><a href="#">Setting</a></li>
-                                <li><a href="">Thông tin người dùng</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- DASHBOARD -->
+            <div>
+                <div style="float: left;font-size: 30px;">Dashboard</div>
+                <div style="float: right;padding-right:30px">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fa fa-download"></i> Grenarate Report
+                    </button></div>
+            </div>
+            <div style="height: 20px;"></div>
+            <!-- Dashboard -->
             <hr>
+
+            <div class="row" style="clear: left;">
+                <div class="col-3">
+                    <button class="btn btn-default mr-2"
+                        style="border-left: solid 5px blue; height: 100px; width: 300px;">
+                        <div style="float: left">
+                            <div style="color: blue;"> EARNINGS (MONTHLY)</div>
+                            <div style="font-size: 24px; text-align: left;">$40.000</div>
+                        </div>
+                        <div style="float: right; padding-right:20px; padding-top: 10px;"><i
+                                style="height: 30px;width: 30px ;" class="fa fa-calendar-alt"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-default mr-2"
+                        style="border-left: solid 5px rgb(59, 141, 34); height: 100px; width: 300px;">
+                        <div style="float: left;">
+                            <div style="color: rgb(59, 141, 34); text-align: left;"> EARNINGS (ANNUAL)</div>
+                            <div style="font-size: 24px; text-align: left;">$215.000</div>
+                        </div>
+                        <div style="float: right; padding-right:20px; padding-top: 10px;">
+                            <i style="height: 30px;width: 30px ;" class="fa fa-dollar-sign"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-default mr-2"
+                        style="border-left: solid 5px rgb(182, 182, 241); height: 100px; width: 300px;">
+                        <div style="float: left;">
+                            <div style="color: rgb(182, 182, 241); text-align: left;"> TASK</div>
+                            <div style="height: 10px;"></div>
+                            <div class="progress" style="height:10px; width: 200px; text-align: left;">
+                                <div class="progress-bar" style="width:50%;height:10px;">50%</div>
+                            </div>
+                        </div>
+
+                        <div style="float: right; padding-right:20px; padding-top: 10px;">
+                            <i style="height: 30px;width: 30px ;" class="fa fa-tasks"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-default mr-2"
+                        style="border-left: solid 5px rgb(0, 255, 64); height: 100px; width: 300px;">
+                        <div style="float: left">
+                            <div style="color: rgb(0, 255, 64);"> PENDING REQUESTS</div>
+                            <div style="font-size: 24px; text-align: left;">18</div>
+                        </div>
+                        <div style="float: right; padding-right:20px; padding-top: 10px;"><i
+                                style="height: 30px;width: 30px ;" class="fab fa-facebook-messenger"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <hr>
+
+
             <div>
                 <table id="customers">
                     <thead>
@@ -81,9 +135,9 @@
                         </td>
                     </tr>
                 </table>
-                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+                <div style="height: 5px;"></div>
+                <pagination-controls style="float: right;" (pageChange)="pageChanged($event)"></pagination-controls>
             </div>
-
         </div>
     </div>
 </div>

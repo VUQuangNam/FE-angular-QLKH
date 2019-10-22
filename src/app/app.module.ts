@@ -8,6 +8,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CreateComponent } from './create/create.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 @NgModule({
     declarations: [
@@ -15,6 +19,7 @@ import { CreateComponent } from './create/create.component';
         HomePageComponent,
         EditDetailComponent,
         CreateComponent,
+        
     ],
     imports: [
         BrowserModule,
@@ -23,7 +28,9 @@ import { CreateComponent } from './create/create.component';
         FormsModule,
         ReactiveFormsModule,
         NgxPaginationModule,
-        
+        BrowserAnimationsModule,
+     
+    
     ],
     providers: [],
     bootstrap: [AppComponent]

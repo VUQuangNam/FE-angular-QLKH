@@ -22,16 +22,11 @@
 }
 #search{
     width: 100%;
-    margin: 10px;
 
 }
-#inputsearch{
-    padding: 20px 0px 0px 10px;
-    // border-right: solid 1px black;
-}
+
 #username{
-    text-align: center;
-    padding-top: 10px ;
+    text-align: right;
 }
 
 #customers th {
@@ -49,7 +44,7 @@
   
 #customers td, #customers th {
     border: 1px solid black;
-    padding: 8px;
+    padding: 5px;
 }
 #customers tr:nth-child(even){background-color: #f2f2f2;}
 

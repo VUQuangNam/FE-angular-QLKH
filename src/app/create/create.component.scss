@@ -22,14 +22,31 @@
 }
 #search{
     width: 100%;
-    margin: 10px;
 
 }
-#inputsearch{
-    padding: 20px 0px 0px 10px;
-    // border-right: solid 1px black;
-}
+
 #username{
-    text-align: center;
-    padding: 20px;
+    text-align: right;
 }
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#customers td, #customers th {
+    border: 1px solid black;
+    padding: 5px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+ 

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from "@angular/router";
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -16,8 +17,6 @@ export class HomePageComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
     config: any;
-    create;
-    edit;
 
     constructor(
         private router: Router,
@@ -68,10 +67,10 @@ export class HomePageComponent implements OnInit {
                     });
                 }
             }
-        } else{
+        } else {
             console.log("NO DELTE")
         }
-        
+
 
     }
 }
