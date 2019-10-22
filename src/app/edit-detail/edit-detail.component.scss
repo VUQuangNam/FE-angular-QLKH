@@ -1,51 +1,54 @@
-
+#menu{
+    position: relative;
+    width: 100%;
+}
 #crmadmin{
-    height:  100px;
+    height:  50px;
     text-align: center;
     color: white;
-    padding: 40px 0px 40px 0px ;
+    padding: 20px 0px 20px 0px ;
     font-size: 20px;
 }
 #dashboard{
-    text-align: center;
-    height: 50px;
-    color: white;
-    padding: 10px 0px 10px 0px;
-}
-#QL{
     text-align: left;
-    padding-left: 30px ;
+    height: 40px;
     color: white;
+    padding: 10px 0px 0px 16px;
 }
+.sidebar-heading{
+         color: rgba(255,255,255,.4);
+         font-size: 10px;
+}
+
 #QL div{
-    padding: 10px 0px 10px 0px;
+    padding: 16px 16px 16px 16px;
 }
 #search{
     width: 100%;
+
 
 }
 
 #username{
     text-align: right;
 }
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
-}
-#customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
+table, td, th {  
+    border: 1px solid #ddd;
+  }
+table {
     width: 100%;
-}
-  
-#customers td, #customers th {
-    border: 1px solid black;
-    padding: 5px;
-}
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+    border-collapse: collapse;
+  }
+  table th{
+      height: 40px;
+      padding: 10px 10px 10px 10px;
+  }
+  table td{
+      height: 40px;
+      padding-left: 10px;
 
-#customers tr:hover {background-color: #ddd;}
+  }
+  pagination-controls{
+    float: right;
+    margin: 10px 30px 10px 10px;
+  }
