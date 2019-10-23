@@ -3,15 +3,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { CreateComponent } from './create/create.component';
-// import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'edit/:id', component: EditDetailComponent },
     { path: 'create', component: CreateComponent },
-    // { path: 'user', component: UserComponent },
-
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

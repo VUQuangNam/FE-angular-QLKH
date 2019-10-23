@@ -9,9 +9,9 @@ import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CreateComponent } from './create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MatTableModule, MatSortModule} from '@angular/material'
-// import { from } from 'rxjs';
-// import { UserComponent } from './user/user.component';
+import { ListdetailComponent } from './listdetail/listdetail.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
     declarations: [
@@ -19,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HomePageComponent,
         EditDetailComponent,
         CreateComponent,
-        // UserComponent
+        ListdetailComponent,
+        NavbarComponent,
     ],
     imports: [
         BrowserModule,
@@ -29,8 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         ReactiveFormsModule,
         NgxPaginationModule,
         BrowserAnimationsModule,
-        // MatTableModule,
-        // MatSortModule
+       
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import { ProductService } from '../product.service';
 })
 export class CreateComponent implements OnInit {
     registerForm: FormGroup;
+    // convert: boolean;
+
 
     constructor(
         private fb: FormBuilder,
@@ -30,7 +32,7 @@ export class CreateComponent implements OnInit {
 
     }
 
-   
+
     onSubmit() {
         console.log(this.registerForm);
         if (this.registerForm.invalid) {
@@ -46,5 +48,8 @@ export class CreateComponent implements OnInit {
                 },
             );
     }
-
+    // OnReload() {
+    //     console.log('home page')
+    //     window.location.reload();
+    // }
 }
