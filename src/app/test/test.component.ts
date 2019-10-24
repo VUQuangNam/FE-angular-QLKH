@@ -14,17 +14,26 @@ import { HttpClient } from '@angular/common/http';
 export class TestComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
+    config: any;
 
     constructor(
         private router: Router,
         private productService: ProductService,
         private route: ActivatedRoute,
         http: HttpClient,
+
     ) {
+        this.config = {
+            currentPage: 1,
+            itemsPerPage: 2
+        }
         http.get<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp').subscribe(res => {
             this.filteredProduct = res;
         });
     }
+    pageChange(newPage: number) {
+		this.router.navigate([''], { queryParams: { page: newPage } });
+	}
     ngOnInit() {
 
         this.productService.getListProductsByUser().subscribe(

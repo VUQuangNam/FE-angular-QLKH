@@ -19,10 +19,6 @@ import { MatTableModule } from '@angular/material';
 import { TestComponent } from './test/test.component';
 
 
-
-
-
-
 @NgModule({
     declarations: [
         AppComponent,

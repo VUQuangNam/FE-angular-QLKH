@@ -88,68 +88,70 @@
         </div>
     </div>
     <hr>
-    <div class="tablediv" style="overflow-x: scroll; width: 1250px;">
-        <table class="table table-striped" [mfData]="filteredProduct" #mf="mfDataTable" [mfRowsOnPage]="20"
-            style="background-color: white;height: 450px;width: 3600px ">
-            <thead>
-                <tr>
-                    <th>
-                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="position">Position</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="age">Age</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="startdate">Start date</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="salary">Salary</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="city">City</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="email">Email</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="phone">Phone</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="country">Country</mfDefaultSorter>
-                    </th>
-                    <th>
-                        Setting
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let product of mf.data">
-                    <td>{{product.name}}</td>
-                    <td>{{product.position}}</td>
-                    <td class="text-right">{{product.age}}</td>
-                    <td>{{product.startdate | date: 'longDate'}}</td>
-                    <td>{{product.salary}}</td>
-                    <td>{{product.city}}</td>
-                    <td>{{product.email}}</td>
-                    <td>{{product.phone}}</td>
-                    <td>{{product.country}}</td>
-                    <td> <a [routerLink]="['/edit', product.id]">
-                            <button class="btn btn-outline-warning" (click)="edit()">Edit</button>
-                        </a>
-                        <button class="btn btn-outline-warning" style="color: blue;"
-                            (click)="deletePost(product.id)">Delete</button></td>
-                </tr>
-            </tbody>
-            <tfoot style="border:solid 0px;">
-                <tr>
-                    <td colspan="2">
-                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-                    </td>
-                </tr>
+    <div class="tablediv">
+        <table class="table table-striped" [mfData]="filteredProduct" #mf="mfDataTable" [mfRowsOnPage]="25">
+            <div style="overflow-x: scroll; width: 1250px; height: 440px;">
+                <div style="background-color: white;width: 2000px; height: 420px; ">
+                    <thead>
+                        <tr class="table-head" fixed-header>
+                            <th style="width: 15%;">
+                                <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                            </th>
+                            <th style="width: 15%;">
+                                <mfDefaultSorter by="position">Position</mfDefaultSorter>
+                            </th>
+                            <th style="width: 5%;">
+                                <mfDefaultSorter by="age">Age</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%;">
+                                <mfDefaultSorter by="startdate">Start date</mfDefaultSorter>
+                            </th>
+                            <th style="width: 5%;">
+                                <mfDefaultSorter by="salary">Salary</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%;">
+                                <mfDefaultSorter by="city">City</mfDefaultSorter>
+                            </th>
+                            <th style="width: 13%;">
+                                <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%;">
+                                <mfDefaultSorter by="phone">Phone</mfDefaultSorter>
+                            </th>
+                            <th style="width: 10%;">
+                                <mfDefaultSorter by="country">Country</mfDefaultSorter>
+                            </th>
+                            <th style="width: 7%;">
+                                Setting
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of mf.data">
+                            <td style="width: 15%;">{{product.name}}</td>
+                            <td style="width: 15%;">{{product.position}}</td>
+                            <td style="width: 5%;" style="text-align: center;">{{product.age}}</td>
+                            <td style="width: 10%;">{{product.startdate | date: 'longDate'}}</td>
+                            <td style="width: 5%;" style="text-align: center;">{{product.salary}}</td>
+                            <td style="width: 10%;">{{product.city}}</td>
+                            <td style="width: 13%;">{{product.email}}</td>
+                            <td style="width: 10%;">{{product.phone}}</td>
+                            <td style="width: 10%;">{{product.country}}</td>
+                            <td style="width: 7%;">
+                                <a [routerLink]="['/edit', product.id]">
+                                    <button class="btn btn-outline-warning" (click)="edit()">Edit</button>
+                                </a>
+                                <button class="btn btn-outline-warning" style="color: blue;"
+                                    (click)="deletePost(product.id)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </div>
+            </div>
+            <tfoot>
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25,50]" style=" margin: 0px 10px 0px 10px;">
+                </mfBootstrapPaginator>
             </tfoot>
-
         </table>
+
+
     </div>

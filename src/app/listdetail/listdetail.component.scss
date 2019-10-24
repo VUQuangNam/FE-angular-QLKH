@@ -18,13 +18,11 @@ pagination-controls{
     text-align: right;
 }
 
-// table th{
-//     height: 42px;
-// }
+
 
 tbody {
     display:block;
-    height:330px;
+    height:350px;
     overflow-y:scroll;
 }
 thead, tbody tr {
@@ -33,5 +31,21 @@ thead, tbody tr {
     table-layout:fixed;/* even columns width , fix width of table too*/
 }
 thead {
-    width: 3584px/* scrollbar is average 1em/16px width, remove it from thead width */
+    width: 1984px/* scrollbar is average 1em/16px width, remove it from thead width */
 }
+thead th {
+    text-align: center;
+    height: 50px;
+    padding-bottom: 15px;
+}
+tbody td{
+    padding-top: 10px;
+    height: 40px;
+}
+table{
+    height: 500px;
+}
+// tfoot{
+
+//     border: 0px solid white;
+// }
