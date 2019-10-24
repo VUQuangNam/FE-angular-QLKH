@@ -88,39 +88,39 @@
         </div>
     </div>
     <hr>
-    <div style=" height: 480px;width: 1260px;overflow-x:scroll">
-        <table class="table table-striped" [mfData]="filteredProduct" #mf="mfDataTable" [mfRowsOnPage]="5"
-            style="background-color: white;height: 480px;width: 2000px ">
+    <div class="tablediv" style="overflow-x: scroll; width: 1250px;">
+        <table class="table table-striped" [mfData]="filteredProduct" #mf="mfDataTable" [mfRowsOnPage]="20"
+            style="background-color: white;height: 450px;width: 3600px ">
             <thead>
                 <tr>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="name">Name</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="position">Position</mfDefaultSorter>
                     </th>
-                    <th style="width: 100px">
+                    <th>
                         <mfDefaultSorter by="age">Age</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="startdate">Start date</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="salary">Salary</mfDefaultSorter>
                     </th>
-                    <th style="width:300px">
+                    <th>
                         <mfDefaultSorter by="city">City</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="email">Email</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="phone">Phone</mfDefaultSorter>
                     </th>
-                    <th style="width: 300px">
+                    <th>
                         <mfDefaultSorter by="country">Country</mfDefaultSorter>
                     </th>
-                    <th style="width: 200px">
+                    <th>
                         Setting
                     </th>
                 </tr>
@@ -145,10 +145,11 @@
             </tbody>
             <tfoot style="border:solid 0px;">
                 <tr>
-                    <td colspan="6">
+                    <td colspan="2">
                         <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
                     </td>
                 </tr>
             </tfoot>
+
         </table>
     </div>

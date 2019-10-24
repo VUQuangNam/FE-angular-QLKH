@@ -14,7 +14,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatButtonModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 import { DemoComponent } from './demo/demo.component';
 import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
-import {DataTableModule} from "angular-6-datatable";
+import { DataTableModule } from "angular-6-datatable";
+import { MatTableModule } from '@angular/material';
+import { TestComponent } from './test/test.component';
+
+
+
 
 
 
@@ -27,6 +32,7 @@ import {DataTableModule} from "angular-6-datatable";
         ListdetailComponent,
         NavbarComponent,
         DemoComponent,
+        TestComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,8 +48,9 @@ import {DataTableModule} from "angular-6-datatable";
         MatDatepickerModule,
         MatInputModule,
         MatNativeDateModule,
-        DataTableModule       
-       
+        DataTableModule,
+        MatTableModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]

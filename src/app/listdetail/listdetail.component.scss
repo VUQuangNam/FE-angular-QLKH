@@ -18,7 +18,20 @@ pagination-controls{
     text-align: right;
 }
 
-table th{
-    height: 42px;
-}
+// table th{
+//     height: 42px;
+// }
 
+tbody {
+    display:block;
+    height:330px;
+    overflow-y:scroll;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+thead {
+    width: 3584px/* scrollbar is average 1em/16px width, remove it from thead width */
+}
