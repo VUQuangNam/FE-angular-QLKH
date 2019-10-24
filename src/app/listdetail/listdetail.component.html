@@ -128,21 +128,23 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let product of mf.data">
-                            <td style="width: 15%;">{{product.name}}</td>
-                            <td style="width: 15%;">{{product.position}}</td>
-                            <td style="width: 5%;" style="text-align: center;">{{product.age}}</td>
-                            <td style="width: 10%;">{{product.startdate | date: 'longDate'}}</td>
-                            <td style="width: 5%;" style="text-align: center;">{{product.salary}}</td>
-                            <td style="width: 10%;">{{product.city}}</td>
-                            <td style="width: 13%;">{{product.email}}</td>
-                            <td style="width: 10%;">{{product.phone}}</td>
-                            <td style="width: 10%;">{{product.country}}</td>
-                            <td style="width: 7%;">
-                                <a [routerLink]="['/edit', product.id]">
-                                    <button class="btn btn-outline-warning" (click)="edit()">Edit</button>
-                                </a>
-                                <button class="btn btn-outline-warning" style="color: blue;"
-                                    (click)="deletePost(product.id)">Delete</button></td>
+                            <button>
+                                <td style="width: 15%;">{{product.name}}</td>
+                                <td style="width: 15%;">{{product.position}}</td>
+                                <td style="width: 5%;" style="text-align: center;">{{product.age}}</td>
+                                <td style="width: 10%;">{{product.startdate | date: 'longDate'}}</td>
+                                <td style="width: 5%;" style="text-align: center;">{{product.salary}}</td>
+                                <td style="width: 10%;">{{product.city}}</td>
+                                <td style="width: 13%;">{{product.email}}</td>
+                                <td style="width: 10%;">{{product.phone}}</td>
+                                <td style="width: 10%;">{{product.country}}</td>
+                                <td style="width: 7%;">
+                                    <a [routerLink]="['/edit', product.id]">
+                                        <button class="btn btn-outline-warning" (click)="edit()">Edit</button>
+                                    </a>
+                                    <button class="btn btn-outline-warning" style="color: blue;"
+                                        (click)="deletePost(product.id)">Delete</button></td>
+                            </button>
                         </tr>
                     </tbody>
                 </div>
