@@ -11,6 +11,11 @@ import { CreateComponent } from './create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListdetailComponent } from './listdetail/listdetail.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatButtonModule, MatMenuModule, MatSidenavModule } from '@angular/material';
+import { DemoComponent } from './demo/demo.component';
+import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import {DataTableModule} from "angular-6-datatable";
+
 
 
 @NgModule({
@@ -21,6 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
         CreateComponent,
         ListdetailComponent,
         NavbarComponent,
+        DemoComponent,
     ],
     imports: [
         BrowserModule,
@@ -30,6 +36,13 @@ import { NavbarComponent } from './navbar/navbar.component';
         ReactiveFormsModule,
         NgxPaginationModule,
         BrowserAnimationsModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatNativeDateModule,
+        DataTableModule       
        
     ],
     providers: [],

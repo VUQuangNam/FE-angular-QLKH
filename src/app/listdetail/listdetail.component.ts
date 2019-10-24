@@ -15,8 +15,6 @@ import { HttpClient } from '@angular/common/http';
 export class ListdetailComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
-    config: any;
-    convertedit: boolean;
 
     constructor(
         private router: Router,
@@ -27,10 +25,6 @@ export class ListdetailComponent implements OnInit {
         http.get<[Product]>('http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp').subscribe(res => {
             this.filteredProduct = res;
         });
-        this.config = {
-            itemsPerPage: 10,
-            currentPage: 1,
-        };
     }
     ngOnInit() {
         
@@ -44,9 +38,7 @@ export class ListdetailComponent implements OnInit {
             .subscribe(next => (this.filteredProduct = next), error => (this.filteredProduct = []));
 
     }
-    pageChanged(event) {
-        this.config.currentPage = event;
-    }
+  
     search(key) {
         this.filteredProduct = this.filteredProduct.filter(product => product.name.toLowerCase().includes(key.toLowerCase()));
         console.log("list " + this.filteredProduct.length);
@@ -74,9 +66,5 @@ export class ListdetailComponent implements OnInit {
 
 
     }
-    edit(i) {
-        console.log("edit")
-        this.convertedit = true;
-        
-    }
+
 }
