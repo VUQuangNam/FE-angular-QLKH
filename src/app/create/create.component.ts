@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 @Component({
     selector: 'app-create',
@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
             age: ['', [Validators.required]],
             startdate: ['', [Validators.required]],
             salary: ['', [Validators.required]]
-        })
+        });
 
 
     }
@@ -43,7 +43,7 @@ export class CreateComponent implements OnInit {
             .subscribe(
                 data => {
                     console.log('succsess');
-                    alert("Đăng ký thành công!!");
+                    alert('Đăng ký thành công!!');
                     window.location.reload();
                 },
             );

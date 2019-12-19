@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -8,15 +8,11 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 })
 export class HomePageComponent implements OnInit {
-    
+
     convert: boolean;
 
+    constructor() { }
 
-    constructor() {
-
-    }
-
-    ngOnInit() {
-    }
+    ngOnInit() { }
 
 }

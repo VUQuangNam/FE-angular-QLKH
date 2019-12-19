@@ -1,49 +1,47 @@
-
-table, td, th {  
-    border: 1px solid #ddd;
-    text-align: left;
-    padding: 0px 10px 0px 10px;
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 0px 10px 0px 10px;
 }
-pagination-controls{
-    float: right;
-    margin: 10px 30px 10px 10px;
+pagination-controls {
+  float: right;
+  margin: 10px 30px 10px 10px;
 }
-#search{
-    width: 100%;
-
-
-}
-
-#username{
-    text-align: right;
+#search {
+  width: 100%;
 }
 
-
+#username {
+  text-align: right;
+}
 
 tbody {
-    display:block;
-    height:350px;
-    overflow-y:scroll;
+  display: block;
+  height: 350px;
+  overflow-y: scroll;
 }
-thead, tbody tr {
-    display:table;
-    width:100%;
-    table-layout:fixed;/* even columns width , fix width of table too*/
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* even columns width , fix width of table too*/
 }
 thead {
-    width: 1984px/* scrollbar is average 1em/16px width, remove it from thead width */
+  width: 1984px; /* scrollbar is average 1em/16px width, remove it from thead width */
 }
 thead th {
-    text-align: center;
-    height: 50px;
-    padding-bottom: 15px;
+  text-align: center;
+  height: 50px;
+  padding-bottom: 15px;
 }
-tbody td{
-    padding-top: 10px;
-    height: 40px;
+tbody td {
+  padding-top: 10px;
+  height: 40px;
 }
-table{
-    height: 500px;
+table {
+  height: 500px;
 }
 // tfoot{
 

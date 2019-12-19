@@ -36,7 +36,6 @@ export class EditDetailComponent implements OnInit {
                 this.postForm.patchValue(this.product);
             },
             error => {
-                console.log(error);
                 this.product = null;
             }
         );
