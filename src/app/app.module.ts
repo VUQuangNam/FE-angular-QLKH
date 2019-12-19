@@ -11,10 +11,18 @@ import { CreateComponent } from './create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListdetailComponent } from './listdetail/listdetail.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatButtonModule, MatMenuModule, MatSidenavModule } from '@angular/material';
-import { MatDatepickerModule, MatInputModule, MatNativeDateModule } from '@angular/material';
+import {
+    MatButtonModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule
+} from '@angular/material';
 import { DataTableModule } from 'angular-6-datatable';
-import { MatTableModule } from '@angular/material';
+import { TestComponent } from './material/test.component';
 
 
 @NgModule({
@@ -25,6 +33,7 @@ import { MatTableModule } from '@angular/material';
         CreateComponent,
         ListdetailComponent,
         NavbarComponent,
+        TestComponent,
     ],
     imports: [
         BrowserModule,
@@ -42,7 +51,7 @@ import { MatTableModule } from '@angular/material';
         MatNativeDateModule,
         DataTableModule,
         MatTableModule,
-
+        MatPaginatorModule
     ],
     providers: [],
     bootstrap: [AppComponent]
