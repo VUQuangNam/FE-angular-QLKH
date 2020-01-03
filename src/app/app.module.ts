@@ -6,11 +6,10 @@ import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { CreateComponent } from './create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListdetailComponent } from './listdetail/listdetail.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { SideNavComponent } from './sidenav/sidenav.component';
 import {
     MatButtonModule,
     MatMenuModule,
@@ -19,10 +18,13 @@ import {
     MatInputModule,
     MatNativeDateModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule
 } from '@angular/material';
-import { DataTableModule } from 'angular-6-datatable';
 import { TestComponent } from './material/test.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
@@ -32,8 +34,9 @@ import { TestComponent } from './material/test.component';
         EditDetailComponent,
         CreateComponent,
         ListdetailComponent,
-        NavbarComponent,
+        SideNavComponent,
         TestComponent,
+        DemoComponent
     ],
     imports: [
         BrowserModule,
@@ -41,7 +44,6 @@ import { TestComponent } from './material/test.component';
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule,
-        NgxPaginationModule,
         BrowserAnimationsModule,
         MatButtonModule,
         MatMenuModule,
@@ -49,9 +51,11 @@ import { TestComponent } from './material/test.component';
         MatDatepickerModule,
         MatInputModule,
         MatNativeDateModule,
-        DataTableModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatListModule,
+        MatIconModule,
+        MatToolbarModule
     ],
     providers: [],
     bootstrap: [AppComponent]

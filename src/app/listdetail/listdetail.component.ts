@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { HttpClient } from '@angular/common/http';
+import { MatPaginator, MatSort } from '@angular/material';
 
 
 
@@ -14,6 +15,9 @@ export class ListdetailComponent implements OnInit {
     filteredProduct: Product[] = [];
     products: Product[] = [];
 
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+    @ViewChild(MatSort, { static: true }) sort: MatSort;
+
     constructor(
         private productService: ProductService,
         http: HttpClient,
@@ -23,7 +27,6 @@ export class ListdetailComponent implements OnInit {
         });
     }
     ngOnInit() {
-
         this.productService.getListProductsByUser().subscribe(
             next => {
                 this.filteredProduct = next;
@@ -32,7 +35,7 @@ export class ListdetailComponent implements OnInit {
         this.productService
             .getProducts()
             .subscribe(next => (this.filteredProduct = next), error => (this.filteredProduct = []));
-
+        console.log(this.filteredProduct);
     }
 
     search(key) {

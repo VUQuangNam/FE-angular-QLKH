@@ -1,94 +1,90 @@
-<div>
-    <!-- SEARCH -->
-    <div id="search">
-        <div class="row" style="background-color: white;">
-            <div class="col-6">
-                <div class="input-group" style="margin-top: 10px;">
-                    <input type="text" class="form-control" placeholder="Search for..."
-                        style="width: 333px;height: 38px;" (input)="search($event.target.value)">
-                    <button class="input-group-text" style="height: 38px;width: 38;background-color: #4e73df;border-top-right-radius: 0.55rem;
+<!-- <div id="search">
+    <div class="row" style="background-color: white;">
+        <div class="col-6">
+            <div class="input-group" style="margin-top: 10px;">
+                <input type="text" class="form-control" placeholder="Search for..." style="width: 333px;height: 38px;"
+                    (input)="search($event.target.value)">
+                <button class="input-group-text" style="height: 38px;width: 38;background-color: #4e73df;border-top-right-radius: 0.55rem;
                 border-bottom-right-radius: 0.55rem;"><i style="width: 20px;color: white;"
-                            class="fa fa-search"></i></button>
-                    <label for="s"></label>
-                </div>
-            </div>
-            <div class="col-6">
+                        class="fa fa-search"></i></button>
+                <label for="s"></label>
             </div>
         </div>
-    </div>
-    <!-- DASHBOARD -->
-    <div>
-        <div style="float: left;">
-            <h1>Dashboard</h1>
+        <div class="col-6">
         </div>
-        <div style="float: right;padding:20px 30px 0px 0px">
-            <button type="button" class="btn" style="background-color: rgb(78, 115, 223); color: white;">
-                <i class="fa fa-download"></i> Grenarate Report
-            </button></div>
     </div>
-    <!-- Dashboard -->
+</div>
+<div>
+    <div style="float: left;">
+        <h1>Dashboard</h1>
+    </div>
+    <div style="float: right;padding:20px 30px 0px 0px">
+        <button type="button" class="btn" style="background-color: rgb(78, 115, 223); color: white;">
+            <i class="fa fa-download"></i> Grenarate Report
+        </button></div>
+</div>
 
-    <div class="row" style="clear: left;">
-        <div class="col-3">
-            <button class="btn btn-default mr-2"
-                style="border-left: solid 5px #3173FB; height: 100px; width: 300px;border-radius: 10px;">
-                <div style="float: left">
-                    <div style="color: #3173FB;margin-bottom: 4px"> EARNINGS (MONTHLY)</div>
-                    <div style="font-size: 20px; text-align: left;">$40.000</div>
-                </div>
-                <div style="float: right; padding-right:20px; padding-top: 10px;"><i
-                        style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
-                        class="fas fa-calendar fa-2x text-gray-300"></i>
-                </div>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-default mr-2"
-                style="border-left: solid 5px #45c98a; height: 100px; width: 300px;border-radius: 10px;">
-                <div style="float: left;">
-                    <div style="color: #45c98a; text-align: left;margin-bottom: 4px"> EARNINGS (ANNUAL)</div>
-                    <div style="font-size: 20px; text-align: left;">$215.000</div>
-                </div>
-                <div style="float: right; padding-right:20px; padding-top: 10px;">
-                    <i style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
-                        class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                </div>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-default mr-2"
-                style="border-left: solid 5px rgb(54, 185, 204); height: 100px; width: 300px;border-radius: 10px;">
-                <div style="float: left;">
-                    <div style="color: rgb(54, 185, 204); text-align: left;margin-bottom: 4px"> TASK</div>
-                    <div style="height: 10px;"></div>
-                    <div class="progress" style="height:10px; width: 200px; text-align: left;">
-                        <div class="progress-bar" style="width:50%;height:10px;background-color: rgb(54, 185, 204);">50%
-                        </div>
+<div class="row" style="clear: left;">
+    <div class="col-3">
+        <button class="btn btn-default mr-2"
+            style="border-left: solid 5px #3173FB; height: 100px; width: 300px;border-radius: 10px;">
+            <div style="float: left">
+                <div style="color: #3173FB;margin-bottom: 4px"> EARNINGS (MONTHLY)</div>
+                <div style="font-size: 20px; text-align: left;">$40.000</div>
+            </div>
+            <div style="float: right; padding-right:20px; padding-top: 10px;"><i
+                    style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
+                    class="fas fa-calendar fa-2x text-gray-300"></i>
+            </div>
+        </button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-default mr-2"
+            style="border-left: solid 5px #45c98a; height: 100px; width: 300px;border-radius: 10px;">
+            <div style="float: left;">
+                <div style="color: #45c98a; text-align: left;margin-bottom: 4px"> EARNINGS (ANNUAL)</div>
+                <div style="font-size: 20px; text-align: left;">$215.000</div>
+            </div>
+            <div style="float: right; padding-right:20px; padding-top: 10px;">
+                <i style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
+                    class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+            </div>
+        </button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-default mr-2"
+            style="border-left: solid 5px rgb(54, 185, 204); height: 100px; width: 300px;border-radius: 10px;">
+            <div style="float: left;">
+                <div style="color: rgb(54, 185, 204); text-align: left;margin-bottom: 4px"> TASK</div>
+                <div style="height: 10px;"></div>
+                <div class="progress" style="height:10px; width: 200px; text-align: left;">
+                    <div class="progress-bar" style="width:50%;height:10px;background-color: rgb(54, 185, 204);">50%
                     </div>
                 </div>
+            </div>
 
-                <div style="float: right; padding-right:20px; padding-top: 10px;">
-                    <i style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
-                        class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                </div>
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-default mr-2"
-                style="border-left: solid 5px #f6c23e; height: 100px; width: 290px;border-radius: 10px;">
-                <div style="float: left">
-                    <div style="color: #f6c23e"> PENDING REQUESTS</div>
-                    <div style="font-size: 20px; text-align: left;">18</div>
-                </div>
-                <div style="float: right; padding-right:20px; padding-top: 10px;"><i
-                        style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
-                        class="fas fa-comments fa-2x text-gray-300"></i>
-                </div>
-            </button>
-        </div>
+            <div style="float: right; padding-right:20px; padding-top: 10px;">
+                <i style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
+                    class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+            </div>
+        </button>
     </div>
-    <hr>
-    <div class="tablediv">
+    <div class="col-3">
+        <button class="btn btn-default mr-2"
+            style="border-left: solid 5px #f6c23e; height: 100px; width: 290px;border-radius: 10px;">
+            <div style="float: left">
+                <div style="color: #f6c23e"> PENDING REQUESTS</div>
+                <div style="font-size: 20px; text-align: left;">18</div>
+            </div>
+            <div style="float: right; padding-right:20px; padding-top: 10px;"><i
+                    style="height: 30px;width: 30px ;color: rgb(220, 220, 248);"
+                    class="fas fa-comments fa-2x text-gray-300"></i>
+            </div>
+        </button>
+    </div>
+</div>
+<hr> -->
+<!-- <div class="tablediv">
         <table class="table table-striped" [mfData]="filteredProduct" #mf="mfDataTable" [mfRowsOnPage]="25">
             <div style="overflow-x: scroll; width: 1250px; height: 440px;">
                 <div style="background-color: white;width: 2000px; height: 420px; ">
@@ -154,6 +150,14 @@
                 </mfBootstrapPaginator>
             </tfoot>
         </table>
-
-
+    </div> -->
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
     </div>
+</mat-drawer-container>

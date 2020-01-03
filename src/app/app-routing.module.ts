@@ -4,15 +4,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { CreateComponent } from './create/create.component';
 import { ListdetailComponent } from './listdetail/listdetail.component';
-import { TestComponent } from './material/test.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 const routes: Routes = [
-    { path: '', component: HomePageComponent },
-    { path: 'edit/:id', component: EditDetailComponent },
-    { path: 'create', component: CreateComponent },
-    { path: 'list', component: ListdetailComponent },
-    { path: 'test', component: TestComponent },
+    {
+        path: '',
+        component: HomePageComponent,
+        children: [
+            { path: 'create', component: CreateComponent },
+            { path: 'list', component: ListdetailComponent },
+            // { path: 'nhan-vien/:id', component: UserDetailComponent },
+        ]
+    },
+    // { path: '', component: HomePageComponent },
+    // { path: 'edit/:id', component: EditDetailComponent },
+    // { path: 'create', component: CreateComponent },
+    // { path: 'list', component: ListdetailComponent },
+    // { path: 'demo', component: DemoComponent }
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
