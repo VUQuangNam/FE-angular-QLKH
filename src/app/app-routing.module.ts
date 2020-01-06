@@ -5,6 +5,7 @@ import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { CreateComponent } from './create/create.component';
 import { ListdetailComponent } from './listdetail/listdetail.component';
 import { DemoComponent } from './demo/demo.component';
+import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
         children: [
             { path: 'create', component: CreateComponent },
             { path: 'list', component: ListdetailComponent },
-            // { path: 'nhan-vien/:id', component: UserDetailComponent },
+            { path: '', component: IntroducingPageComponent },
+            { path: 'demo', component: DemoComponent },
         ]
     },
     // { path: '', component: HomePageComponent },

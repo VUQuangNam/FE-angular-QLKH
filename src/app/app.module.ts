@@ -25,6 +25,7 @@ import {
 } from '@angular/material';
 import { TestComponent } from './material/test.component';
 import { DemoComponent } from './demo/demo.component';
+import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DemoComponent } from './demo/demo.component';
         ListdetailComponent,
         SideNavComponent,
         TestComponent,
-        DemoComponent
+        DemoComponent,
+        IntroducingPageComponent
     ],
     imports: [
         BrowserModule,

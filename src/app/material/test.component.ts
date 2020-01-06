@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { Product } from '../product';
+import { Product } from '../../model/product';
 import { HttpClient } from '@angular/common/http';
 
 export interface PeriodicElement {
