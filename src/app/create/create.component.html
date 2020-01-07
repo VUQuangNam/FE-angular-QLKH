@@ -1,50 +1,53 @@
-<!-- <h4 style="padding: 10px 10px 10px ;"><b>Thêm mới thông tin người dùng</b>
-</h4>
-<hr>
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="form-group  row">
-                Name
-                <input type="text" class="form-control" formControlName="name" placeholder="Name">
-            </div>
-            <div class="form-group row">
-                <label class="col">Position:
-                    <textarea class="form-control" formControlName="position" placeholder="Position"></textarea></label>
-            </div>
-            <div class="form-group row">
-                <label class="col">
-                    Office
-                    <input type="text" class="form-control" formControlName="office" placeholder="Office">
-                </label>
-            </div>
-            <div class="form-group row">
-                <label class="col">
-                    Age
-                    <input type="text" class="form-control" formControlName="age" placeholder="Age">
-                </label>
-            </div>
-            <div class="form-group row">
-                <label class="col">
-                    Start date
-                    <input type="date" class="form-control" formControlName="startdate">
-                </label>
-            </div>
-            <div class="form-group row">
-                <label class="col">
-                    Salary
-                    <input type="text" class="form-control" formControlName="salary" placeholder="Salary">
-                </label>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit" style="width: 80px;border:solid 1px blue;">Submit</button>
-                &nbsp;
-                <a [routerLink]="['/']" routerLinkActive="router-link-active">
-                    <button class="btn btn-default" type="submit"
-                        style="width: 80px;border:solid 1px blue;">Back</button></a>
-            </div>
+<div class="row create-user">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h4><b>Thêm mới thông tin người dùng</b> </h4>
+        <form name="form" (ngSubmit)="onCreate(f)" #f="ngForm" autocomplete="off">
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="id" required minlength="5" [(ngModel)]="model.id"
+                    #id="ngModel" placeholder="Nhập mã khách hàng">
+                <mat-error *ngIf="f.submitted &&  id.invalid">
+                    Mã khách hàng không được để trống và có ít nhất 5 ký tự...
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="name" required minlength="3"
+                    [(ngModel)]="model.name" #name="ngModel" placeholder="Nhập tên hiển thị">
+                <mat-error *ngIf="f.submitted &&  name.invalid">
+                    Tên hiển thị không được để trống và có tối thiểu 3 ký tự.!
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="position" [(ngModel)]="model.position"
+                    #position="ngModel" placeholder="Nhập tên chức vụ">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="age" [(ngModel)]="model.age" #age="ngModel"
+                    placeholder="Nhập tuổi.">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="email" required minlength="3"
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" [(ngModel)]="model.email" #email="ngModel"
+                    placeholder="Nhập email">
+                <mat-error *ngIf="f.submitted &&  email.invalid">
+                    Email không hợp lệ
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width validated mb-3">
+                <input matInput type="text" class="form-control" name="phone" required
+                    pattern="^(03|05|07|08|09)+([0-9]{8})$" minlength="10" maxlength="10" [(ngModel)]="model.phone"
+                    #phone="ngModel" placeholder="Nhập số điện thoại">
+                <mat-error *ngIf="f.submitted &&  phone.invalid">
+                    Số điện thoại không hợp lệ
+                </mat-error>
+            </mat-form-field>
+            <button type="submit" class="btn btn-success">Tạo mới</button>
         </form>
     </div>
-    <div class="col-3"></div>
-</div> -->
+    <div class="col-4"></div>
+</div>

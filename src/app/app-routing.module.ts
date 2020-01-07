@@ -17,6 +17,7 @@ const routes: Routes = [
             { path: 'list', component: ListdetailComponent },
             { path: '', component: IntroducingPageComponent },
             { path: 'demo', component: DemoComponent },
+            { path: 'edit/:id', component: EditDetailComponent },
         ]
     },
     // { path: '', component: HomePageComponent },

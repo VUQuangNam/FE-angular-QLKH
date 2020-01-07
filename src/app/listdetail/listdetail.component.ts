@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductService } from '../../service/product.service';
-import { Product } from '../../model/product';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { User } from 'src/model/user';
+import { UserService } from 'src/service/product.service';
 
-
+declare let swal: any;
 
 @Component({
     selector: 'app-listdetail',
@@ -12,52 +12,40 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 })
 export class ListdetailComponent implements OnInit {
     displayedColumns: string[] = ['id', 'position', 'name', 'age', 'date', 'setting'];
-    dataSource: any = [];
-
-    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-    @ViewChild(MatSort, { static: true }) sort: MatSort;
+    dataSource: MatTableDataSource<User[]>;
+    keypress: any;
 
     constructor(
-        private productService: ProductService,
-    ) {
+        private userService: UserService
+    ) { }
 
-    }
+    @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
     async ngOnInit() {
-        // await this.productService.getListProducts().subscribe(
-        //     next => {
-        //         this.dataSource = next;
-        //         console.log(this.dataSource);
-        //     }
-        // );
-        const respone = await this.productService.list();
-        this.dataSource = respone;
+        await this.userService.getListusers().subscribe(
+            next => {
+                this.dataSource = new MatTableDataSource(next);
+                this.dataSource.paginator = this.paginator;
+                console.log(this.dataSource.data);
+            });
     }
 
-    // onSeach(filterValue: string) {
-    //     this.dataSource.filter = filterValue.trim().toLowerCase();
-    //     if (this.dataSource.paginator) {
-    //         this.dataSource.paginator.firstPage();
-    //     }
-    // }
+    onSeach(value: string) {
+        clearTimeout(this.keypress);
+        this.keypress = setTimeout(() => {
+            this.dataSource.filter = value.trim().toLowerCase();
+            if (this.dataSource.paginator) {
+                this.dataSource.paginator.firstPage();
+            }
+        }, 500);
+    }
 
-    // onSeach(key) {
-    //     this.dataSource = this.dataSource.filter(x => x.name.toLowerCase().includes(key.toLowerCase()));
-    // }
-
-    // deletePost(i) {
-    //     const result = confirm('Bạn có chắc chắn xóa người dùng này?');
-    //     if (result === true) {
-    //         for (let j = 0; j < this.dataSource.length; j++) {
-    //             const product = this.dataSource[j];
-    //             if (product.id === i) {
-    //                 this.productService.deleteProduct(product.id).subscribe(() => {
-    //                     const indexOf = this.dataSource.indexOf(product);
-    //                     this.dataSource.splice(indexOf, 1);
-    //                     alert('Delete done');
-    //                 });
-    //             }
-    //         }
-    //     }
+    // deleteUser(i) {
+    //     const check = this.dataSource.data.findIndex(x => x === i);
+    //     this.dataSource.data.splice(check, 1);
+    //     console.log(this.dataSource);
+    //     this.userService.deleteUser(i.id).subscribe(() => {
+    //         console.log('Delete done');
+    //     });
     // }
 }

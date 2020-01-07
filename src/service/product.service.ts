@@ -1,50 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Product } from '../model/product';
-
+import { User } from 'src/model/user';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ProductService {
-    products: Product[] = [];
+export class UserService {
+    user: User[] = [];
     private readonly API_URL = 'http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp';
 
-    constructor(private http: HttpClient) {
+    constructor(
+        private http: HttpClient
+    ) { }
+
+    getuserById(id: any): Observable<User> {
+        return this.http.get<User>(`${this.API_URL}/${(id)}`);
     }
 
-    // list() {
-    //     return this.http.get(this.API_URL, this.headerConfig.requestOptions())
-    //         .toPromise().then(result => result.json());
-    // }
-
-
-    getProductById(id: number): Observable<Product> {
-        return this.http.get<Product>(`${this.API_URL}/${(id)}`);
+    createuser(user: User): Observable<User> {
+        return this.http.post<User>(this.API_URL, user);
     }
 
-    createProduct(product: Product): Observable<Product> {
-        return this.http.post<Product>(this.API_URL, product);
-    }
-
-    deleteProduct(id: number): Observable<any> {
+    deleteuser(id: any): Observable<any> {
         return this.http.delete(`${this.API_URL}/${id}`);
-
     }
 
-    updateProduct(product: Product): Observable<Product> {
-        return this.http.put<Product>(`${this.API_URL}/${product.id}`, product);
+    updateuser(user: User): Observable<User> {
+        return this.http.put<User>(`${this.API_URL}/${user.id}`, user);
     }
 
-    getListProducts(): Observable<any> {
+    getListusers(): Observable<any> {
         return this.http.get<any>(this.API_URL);
     }
 
-    list() {
-        return this.http.get(this.API_URL)
-            .toPromise().then(result => result);
-    }
-
 }
+

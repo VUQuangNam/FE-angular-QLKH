@@ -23,7 +23,6 @@ import {
     MatIconModule,
     MatToolbarModule
 } from '@angular/material';
-import { TestComponent } from './material/test.component';
 import { DemoComponent } from './demo/demo.component';
 import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
 
@@ -36,7 +35,6 @@ import { IntroducingPageComponent } from './introducing-page/introducing-page.co
         CreateComponent,
         ListdetailComponent,
         SideNavComponent,
-        TestComponent,
         DemoComponent,
         IntroducingPageComponent
     ],

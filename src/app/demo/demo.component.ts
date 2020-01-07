@@ -1,9 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { ProductService } from 'src/service/product.service';
-import { Product } from 'src/model/product';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { UserService } from 'src/service/product.service';
+import { User } from 'src/model/user';
 
 export interface UserData {
     id: string;
@@ -28,33 +26,32 @@ const NAMES: string[] = [
 @Component({
     selector: 'app-demo',
     templateUrl: './demo.component.html',
-    styleUrls: ['./demo.component.scss']
+    styleUrls: ['./demo.component.scss'],
+    providers: [
+        UserService
+    ]
 })
-
 export class DemoComponent implements OnInit {
+    displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
+    dataSource: MatTableDataSource<User>;
+
     @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
     @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-    displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-    dataSource: MatTableDataSource<Product>;
-    model: any = [];
-
     constructor(
-        private productService: ProductService
+        private userService: UserService,
     ) {
-        this.productService.getListProducts().subscribe(
-            next => {
-                // this.model = next;
-                this.dataSource = new MatTableDataSource(next);
-            }
-        );
-        // Assign the data to the data source for the table to render
-        // this.dataSource = new MatTableDataSource(this.model);
     }
 
-    ngOnInit() {
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+    async ngOnInit() {
+        await this.userService.getListusers().subscribe(
+            next => {
+                this.dataSource = new MatTableDataSource(next);
+                this.dataSource.paginator = this.paginator;
+                this.dataSource.sort = this.sort;
+            }
+        );
+
     }
 
     applyFilter(filterValue: string) {
@@ -64,4 +61,17 @@ export class DemoComponent implements OnInit {
             this.dataSource.paginator.firstPage();
         }
     }
+}
+
+/** Builds and returns a new User. */
+function createNewUser(id: number): UserData {
+    const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+        NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+
+    return {
+        id: id.toString(),
+        name: name,
+        progress: Math.round(Math.random() * 100).toString(),
+        color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    };
 }

@@ -1,55 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ProductService } from '../../service/product.service';
+import { Component } from '@angular/core';
+import { UserService } from 'src/service/product.service';
+import { User } from 'src/model/user';
+
+declare let swal: any;
+
 @Component({
     selector: 'app-create',
     templateUrl: './create.component.html',
-    styleUrls: ['./create.component.scss']
+    styleUrls: ['./create.component.scss'],
+    providers: [
+        UserService
+    ]
 
 })
-export class CreateComponent implements OnInit {
-    registerForm: FormGroup;
-    // convert: boolean;
-
+export class CreateComponent {
+    model: any = {};
+    invalid = true;
 
     constructor(
-        private fb: FormBuilder,
-        private router: Router,
-        private product: ProductService
+        private userService: UserService
     ) { }
 
-    ngOnInit() {
-        this.registerForm = this.fb.group({
-            name: [null, [Validators.required]],
-            position: [null, [Validators.required]],
-            office: [null, Validators.required],
-            age: ['', [Validators.required]],
-            startdate: ['', [Validators.required]],
-            salary: ['', [Validators.required]]
-        });
-
-
-    }
-
-
-    onSubmit() {
-        console.log(this.registerForm);
-        if (this.registerForm.invalid) {
-            return;
+    onCreate = (f) => {
+        this.invalid = f.valid;
+        if (this.invalid) {
+            swal.fire({
+                title: 'Thêm Người Dùng',
+                text: 'Bạn có chắc chắn rằng mình muốn thêm khách hàng này.?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Tôi đồng ý!',
+                cancelButtonText: 'Từ bỏ!'
+            }).then(async result => {
+                try {
+                    if (result.value) {
+                        await this.userService.createuser(this.model as User);
+                        return this.model = {},
+                            f.submitted = false,
+                            swal.fire('Thành Công', 'Tạo mới thành công!', 'success');
+                    }
+                } catch (ex) {
+                    /*begin:: write log ex here: break*/
+                    return console.log(ex),
+                        swal.fire('Hệ Thống', 'Có lỗi xảy ra. Xin vui lòng kiểm tra lại kết nối mạng.!', 'warning');
+                }
+            });
         }
-        console.log(this.registerForm.value);
-        this.product.createProduct(this.registerForm.value)
-            .subscribe(
-                data => {
-                    console.log('succsess');
-                    alert('Đăng ký thành công!!');
-                    window.location.reload();
-                },
-            );
     }
-    // OnReload() {
-    //     console.log('home page')
-    //     window.location.reload();
-    // }
 }
