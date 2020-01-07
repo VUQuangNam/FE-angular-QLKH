@@ -7,7 +7,7 @@ import { User } from 'src/model/user';
     providedIn: 'root'
 })
 export class UserService {
-    user: User[] = [];
+    user: any = {};
     private readonly API_URL = 'http://5da3dc1aa6593f001407a03e.mockapi.io/api/v1/qlsp';
 
     constructor(
@@ -26,8 +26,8 @@ export class UserService {
         return this.http.delete(`${this.API_URL}/${id}`);
     }
 
-    updateuser(user: User): Observable<User> {
-        return this.http.put<User>(`${this.API_URL}/${user.id}`, user);
+    updateuser(id: string, user: User): Observable<User> {
+        return this.http.put<User>(`${this.API_URL}/${id}`, user);
     }
 
     getListusers(): Observable<any> {

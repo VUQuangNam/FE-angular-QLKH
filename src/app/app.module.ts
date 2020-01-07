@@ -21,10 +21,13 @@ import {
     MatPaginatorModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
 } from '@angular/material';
 import { DemoComponent } from './demo/demo.component';
 import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { IntroducingPageComponent } from './introducing-page/introducing-page.co
         ListdetailComponent,
         SideNavComponent,
         DemoComponent,
-        IntroducingPageComponent
+        IntroducingPageComponent,
+        SignInComponent,
+        SignUpComponent
     ],
     imports: [
         BrowserModule,
@@ -55,7 +60,8 @@ import { IntroducingPageComponent } from './introducing-page/introducing-page.co
         MatPaginatorModule,
         MatListModule,
         MatIconModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatCardModule
     ],
     providers: [],
     bootstrap: [AppComponent]

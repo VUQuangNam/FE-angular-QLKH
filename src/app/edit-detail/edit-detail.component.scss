@@ -1,26 +1,7 @@
-#menu{
-    position: fixed;
-    width: 100%;
+mat-form-field {
+  width: 100%;
 }
 
-#crmadmin{
-    height:  50px;
-    text-align: center;
-    color: white;
-    padding: 20px 0px 20px 0px ;
-    font-size: 20px;
-}
-#dashboard{
-    text-align: left;
-    height: 40px;
-    color: white;
-    padding: 10px 0px 0px 16px;
-}
-.sidebar-heading{
-         color: rgba(255,255,255,.4);
-         font-size: 12px;
-}
-
-#QL div{
-    padding: 16px 16px 16px 16px;
+.create-user {
+  background-image: url(../../assets/img/bg1.jpg);
 }

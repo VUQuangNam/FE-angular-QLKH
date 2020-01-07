@@ -1,21 +1,10 @@
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import 'sweetalert2/src/sweetalert2.scss';
+@import "sweetalert2/src/sweetalert2.scss";
 
 html,
 body {
   height: 100%;
-}
-body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
+  padding: 0;
 }

@@ -6,6 +6,8 @@ import { CreateComponent } from './create/create.component';
 import { ListdetailComponent } from './listdetail/listdetail.component';
 import { DemoComponent } from './demo/demo.component';
 import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -20,11 +22,8 @@ const routes: Routes = [
             { path: 'edit/:id', component: EditDetailComponent },
         ]
     },
-    // { path: '', component: HomePageComponent },
-    // { path: 'edit/:id', component: EditDetailComponent },
-    // { path: 'create', component: CreateComponent },
-    // { path: 'list', component: ListdetailComponent },
-    // { path: 'demo', component: DemoComponent }
+    { path: 'dang-nhap', component: SignInComponent },
+    { path: 'dang-ky', component: SignUpComponent }
 ];
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
