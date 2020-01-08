@@ -11,7 +11,7 @@ declare let swal: any;
     styleUrls: ['./listdetail.style.scss']
 })
 export class ListdetailComponent implements OnInit {
-    displayedColumns: string[] = ['id', 'position', 'name', 'age', 'date', 'setting'];
+    displayedColumns: string[] = ['stt', 'id', 'position', 'name', 'age', 'date', 'setting'];
     dataSource: MatTableDataSource<User[]>;
     keypress: any;
 

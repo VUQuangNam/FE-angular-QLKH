@@ -7,7 +7,7 @@ declare let swal: any;
 @Component({
     selector: 'app-create',
     templateUrl: './create.component.html',
-    styleUrls: ['./create.component.scss'],
+    styleUrls: ['./create.style.scss'],
     providers: [
         UserService
     ]

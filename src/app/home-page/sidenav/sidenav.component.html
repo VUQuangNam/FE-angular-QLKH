@@ -1,7 +1,16 @@
-<ul class="list-group">
-    <!-- <img src="../../assets/img/Screenshot_2.png" alt=""> -->
-    <a class="list-group-item" [routerLink]="['/list']"> <i class="fa fa-table"></i>&nbsp; Danh sách</a>
-    <a class="list-group-item"><i class="fas fa-fw fa-cog"></i>&nbsp; QL.Sản phẩm</a>
-    <a class="list-group-item"> <i class="fas fa-fw fa-wrench"></i>&nbsp; QL.Khách hàng</a>
-    <a class="list-group-item" [routerLink]="['/create']"> <i class="fa fa-plus"></i>&nbsp; Thêm mới</a>
-</ul>
+<a class="btn" [routerLink]="['/list']" routerLinkActive="router-link-active">
+    <i class="fa fa-table"></i>&nbsp;
+    Danh sách
+</a>
+<a class="btn" [routerLink]="['/#']" routerLinkActive="router-link-active">
+    <i class="fas fa-fw fa-cog"></i>&nbsp;
+    QL.Sản phẩm
+</a>
+<a class="btn" [routerLink]="['/#']" routerLinkActive="router-link-active">
+    <i class="fas fa-fw fa-wrench"></i>&nbsp;
+    QL.Khách hàng
+</a>
+<a class="btn" [routerLink]="['/create']" routerLinkActive="router-link-active">
+    <i class="fa fa-plus"></i>&nbsp;
+    Thêm mới
+</a>
