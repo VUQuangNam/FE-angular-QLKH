@@ -8,7 +8,7 @@ declare let swal: any;
 @Component({
     selector: 'app-listdetail',
     templateUrl: './listdetail.component.html',
-    styleUrls: ['./listdetail.component.scss']
+    styleUrls: ['./listdetail.style.scss']
 })
 export class ListdetailComponent implements OnInit {
     displayedColumns: string[] = ['id', 'position', 'name', 'age', 'date', 'setting'];
@@ -26,7 +26,6 @@ export class ListdetailComponent implements OnInit {
             next => {
                 this.dataSource = new MatTableDataSource(next);
                 this.dataSource.paginator = this.paginator;
-                console.log(this.dataSource.data);
             });
     }
 
@@ -39,13 +38,4 @@ export class ListdetailComponent implements OnInit {
             }
         }, 500);
     }
-
-    // deleteUser(i) {
-    //     const check = this.dataSource.data.findIndex(x => x === i);
-    //     this.dataSource.data.splice(check, 1);
-    //     console.log(this.dataSource);
-    //     this.userService.deleteUser(i.id).subscribe(() => {
-    //         console.log('Delete done');
-    //     });
-    // }
 }

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { HomePageComponent } from './home-page/home-page.component';
 import { Routes, RouterModule } from '@angular/router';
-import { EditDetailComponent } from './edit-detail/edit-detail.component';
-import { CreateComponent } from './create/create.component';
-import { ListdetailComponent } from './listdetail/listdetail.component';
 import { DemoComponent } from './demo/demo.component';
 import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './login/sign-in/sign-in.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { CreateComponent } from './customers/create/create.component';
+import { ListdetailComponent } from './customers/listdetail.component';
+import { EditDetailComponent } from './customers/detail/detail.component';
 
 
 const routes: Routes = [

@@ -5,11 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { EditDetailComponent } from './edit-detail/edit-detail.component';
-import { CreateComponent } from './create/create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListdetailComponent } from './listdetail/listdetail.component';
-import { SideNavComponent } from './sidenav/sidenav.component';
 import {
     MatButtonModule,
     MatMenuModule,
@@ -26,8 +22,12 @@ import {
 } from '@angular/material';
 import { DemoComponent } from './demo/demo.component';
 import { IntroducingPageComponent } from './introducing-page/introducing-page.component';
-import { SignInComponent } from './sign-in/sign-in.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './login/sign-in/sign-in.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { EditDetailComponent } from './customers/detail/detail.component';
+import { CreateComponent } from './customers/create/create.component';
+import { ListdetailComponent } from './customers/listdetail.component';
+import { SideNavComponent } from './home-page/sidenav/sidenav.component';
 
 
 @NgModule({

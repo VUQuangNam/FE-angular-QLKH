@@ -7,8 +7,8 @@ declare let swal: any;
 
 @Component({
     selector: 'app-edit-detail',
-    templateUrl: './edit-detail.component.html',
-    styleUrls: ['./edit-detail.component.scss'],
+    templateUrl: './detail.component.html',
+    styleUrls: ['./detail.style.scss'],
 
 })
 export class EditDetailComponent implements OnInit {

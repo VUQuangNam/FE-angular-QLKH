@@ -4,12 +4,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-home-page',
     templateUrl: './home-page.component.html',
-    styleUrls: ['./home-page.component.scss'],
+    styleUrls: ['./home-page.style.scss'],
 
 })
 export class HomePageComponent implements OnInit {
-
-    convert: true;
 
     constructor() { }
 
