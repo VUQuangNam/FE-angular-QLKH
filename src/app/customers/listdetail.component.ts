@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { User } from 'src/model/user';
-import { UserService } from 'src/service/product.service';
+import { UserService } from 'src/service/user.service';
 
 declare let swal: any;
 
